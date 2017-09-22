@@ -129,6 +129,18 @@
         <option value="5">5 (Strongly Agree)</option>
     </select>
 
+    <script type="text/javascript">
+        function getAvailableFriends() {
+            var currentURL = window.location.origin;
+            $.ajax({url: currentURL + '/api/friends'})
+
+            .done(function(availableFriends){
+                console.log(availableFriends);
+            })
+        }
+
+        getAvailableFriends();
+    </script>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
