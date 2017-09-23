@@ -30,7 +30,7 @@
     <hr>
     <h3><strong>Question 1</strong></h3>
     <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
-    <select data-placeholder class="selection" id="q1">
+    <select data-placeholder class="selection" id="$("q")">
         <option value="">Make a Selection</option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -131,7 +131,7 @@
       <div class="container">
   <h2>Large Modal</h2>
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Large Modal</button>
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="surveyButton">Open Large Modal</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -159,6 +159,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
     <script type="text/javascript">
+
+    $('#surveyButton').on('click', function(event) {
+        event.preventDefault();
+        var userData = {
+            name: $('#name').val().trim(),
+            photo: $('#photo').val().trim(),
+            answers: [$("#q1").val(),$("#q2").val(),
+            $("#q3").val(),$("#q4").val(),$("#q5").val(),
+            $("#q6").val(),$("#q7").val(),$("#q8").val(),
+            $("#q9").val(),$("#q10").val()]
+        }
+        console.log(userData.answers)
+    });
         function getAvailableFriends() {
             var currentURL = window.location.origin;
             $.ajax({url: currentURL + '/api/friends'})
