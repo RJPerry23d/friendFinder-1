@@ -26,6 +26,8 @@ var matchDifference = 20;
 
 var friendsIndex = 0;
 
+//These function to compare answers
+
 function searchFriends () {
     for (j = 0; j < array1.length; j++) {
         friendsIndex = j;
