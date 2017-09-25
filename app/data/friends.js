@@ -15,7 +15,7 @@ var friendsArray = [{
 {
     name: "Moe",
     photo: "https://i.ytimg.com/vi/Pk8ZqqEZD5w/hqdefault.jpg",
-    answers: ["5","5","5","4","5","4","5","5","5","5"]
+    answers: ["3","3","5","4","1","4","3","5","2","5"]
 }
     
 ]
