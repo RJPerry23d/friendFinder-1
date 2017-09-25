@@ -21,6 +21,8 @@
         <h3>
             <strong>About You</strong>
         </h3>
+        <!-- Below are the name and phote fields to add to name and photo and questions
+        below and each choice has a value -->
         <h4>
             Name (Required)
         </h4>
@@ -166,6 +168,7 @@
 </body>
 <script type="text/javascript">
     var userData;
+    // on the click of the submit button it will store answers in a var userData
 
     $('#surveyButton').on('click', function (event) {
         event.preventDefault();
@@ -180,6 +183,7 @@
         }
         console.log(userData.answers)
 
+// this funciton will make an ajax call get friends that are stored in the data file
 
     function getAvailableFriends() {
         var currentURL = window.location.origin;
@@ -200,7 +204,7 @@
 
                 var friendsIndex = 0;
 
-                //These function to compare answers
+                //These function to compare answers of user to the stored friends
 
                 function searchFriends() {
                     for (j = 0; j < availableFriends.length; j++) {
@@ -209,7 +213,7 @@
                     }
                     console.log("You perfect match is..... " + match);
                 }
-
+                // peronality function will compare answers and return who is the closest match
                 function personality() {
 
                     answerValue = 0;
@@ -249,7 +253,7 @@
     getAvailableFriends();
 });
 
-
+// this will add the user to the friends array and then clear the form
 function addUserData() {
         $.post("/api/friends", userData,
             function (data) {
