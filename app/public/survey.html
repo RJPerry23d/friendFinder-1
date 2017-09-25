@@ -226,9 +226,12 @@
 
                         matchDifference = answerValue;
                         match = availableFriends[friendsIndex].name;
+                        var matchPhoto = availableFriends[friendsIndex].photo
                         console.log(answerValue);
                         console.log(availableFriends[friendsIndex].name);
                         console.log(matchDifference)
+                        $("#matchImg").attr("src", matchPhoto);
+                        $("#matchName").html(match)
                     }
 
 
