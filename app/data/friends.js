@@ -1,5 +1,5 @@
 
-
+//Friends that are pre loaded
 
 var friendsArray = [{
     name: "Homer Simpson",
@@ -19,5 +19,5 @@ var friendsArray = [{
 }
     
 ]
-
+//exports the friends array to be used by other files
 module.exports = friendsArray;
