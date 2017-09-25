@@ -130,8 +130,9 @@
     </select>
         <div class="container">
             <!-- Trigger the modal with a button -->
+            <br>
             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="surveyButton">Submit</button>
-
+            <br>
             <!-- Modal -->
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog modal-lg">
@@ -178,11 +179,6 @@
             ]
         }
         console.log(userData.answers)
-        $.post("/api/new", userData)
-      .done(function(data) {
-        console.log(data);
-
-      });
 
 
     function getAvailableFriends() {
@@ -238,6 +234,7 @@
                         console.log(matchDifference)
                         $("#matchImg").attr("src", matchPhoto);
                         $("#matchName").html(match)
+                        addUserData();
                     }
 
 
@@ -251,6 +248,27 @@
     }
     getAvailableFriends();
 });
+
+
+function addUserData() {
+        $.post("/api/friends", userData,
+            function (data) {
+
+                // Clear the form when submitting
+                $("#name").val("");
+                $("#photo").val("");
+                $("#q1").val("");
+                $("#q2").val("");
+                $("#q3").val("");
+                $("#q4").val("");
+                $("#q5").val("");
+                $("#q6").val("");
+                $("#q7").val("");
+                $("#q8").val("");
+                $("#q9").val("");
+                $("#q10").val("");
+            });
+}
 
 </script>
 
